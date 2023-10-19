@@ -1,0 +1,48 @@
+<div class="game-container">
+    <!-- <div class="controls">
+      <label class="label" for="select">Choose a configuration:</label>
+      <div class="select is-link">
+        <select name="configs" id="select" (change)="onConfigChange($event)">
+          <option value="">--Please choose an option--</option>
+          <option value="gridConfig1">gridConfig1</option>
+          <option value="gridConfig2">gridConfig2</option>
+          <option value="gridConfig3">gridConfig3</option>
+          <option value="gridConfig4">gridConfig4</option>
+          <option value="planeur">planeur</option>
+          <option value="clignotant">clignotant</option>
+          <option value="bloc">bloc</option>
+          <option value="vaisseauLeger">vaisseau Léger</option>
+          <option value="vaisseauMoyen">vaisseau Moyen</option>
+          <option value="puffeur">puffeur</option>
+          <option value="canonPlaneurs">canon à planeurs</option>
+          <option value="canonVaisseauxLeger">canon à vaisseaux léger</option>
+          <option value="canonVaisseauxMoyen">canon à vaisseaux moyens</option>
+          <option value="piecePersane">pièce persane</option>
+          <option value="gliderGun">gliderGun</option>
+        </select>
+      </div>
+      <button class="button is-primary is-outlined" (click)="startGame()" [disabled]="intervalId">Start</button>
+      <button class="button is-primary is-outlined" (click)="stopGame()" [disabled]="!intervalId">Stop</button>
+      <button class="button is-primary is-outlined" (click)="RandomizeGrid()">Randomize</button>
+      <button class="button is-primary is-outlined" (click)="initializeGrid()">Initialise</button>
+      <button class="button is-primary is-outlined" (click)="see()">see</button>
+    </div> -->
+    <div class="grid-container">
+      <div *ngFor="let row of grid; index as i " class="row">
+        <div *ngFor="let cell of row; index as j"
+             class="cell"
+             [class.alive]="cell"
+             [style.grid-row]="getGridRow(i)"
+             [style.grid-col]="getGridCol(j)"
+             (click)="toggleCellState(i, j)">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div (click)="OpenMenu()">CLIQUE</div>
+  <app-intromodale *ngIf="openIntroModal" [openModal]="openIntroModal" (continueClicked)="CloseModale()"></app-intromodale>
+  <app-controlmodale *ngIf="openMenu" [openMenu]="openMenu" [intervalId]="intervalId"
+              (closeClicked)="CloseMenu()" 
+              (playClicked)="startGame()"
+              (pauseClicked)="stopGame()"
+              ></app-controlmodale>

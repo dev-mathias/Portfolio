@@ -1,0 +1,50 @@
+
+.invit{
+    background-color: black;
+    background-image: radial-gradient(
+      rgba(0, 150, 0, 0.75), black 120%
+    );
+    overflow: auto;
+    text-shadow: 0 0 5px #C8C8C8;
+    font: 1.3rem Inconsolata, monospace;
+    color:white;
+    height: 100%;
+    font-size:x-large;
+    font-weight: 600;
+    padding-left: 20px;
+    padding-top: 10px;
+}
+.invit input{
+    background-color:transparent;
+    border: none;
+    color: white;
+    text-shadow: 0 0 5px #C8C8C8;
+    font: 1.3rem Inconsolata, monospace;
+    font-size: x-large;
+    font-weight: 600;
+    
+}
+.invit input:focus{
+    outline: none;
+}
+
+
+
+
+@media screen and (min-width: 400px) and (max-width: 600px)  {
+    .invit{
+        font-size: medium;
+    }
+    .invit input{
+        font-size: medium;
+    }
+}
+
+@media screen and (min-width: 200px) and (max-width: 400px)  {
+    .invit{
+        font-size: small;
+    }
+    .invit input{
+        font-size: small;
+    }
+}

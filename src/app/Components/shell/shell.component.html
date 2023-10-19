@@ -1,0 +1,8 @@
+<div class="invit" id="invite">
+    <ng-container *ngFor="let element of messages; let i = index">    
+    <span [innerHTML]="element"></span><br>       
+    </ng-container>
+    <div>
+        notroot@localhost$  <input autocomplete="off" id="userInput" (keyup)="onInput($event)" [(ngModel)]="myValue">
+    </div>
+</div>

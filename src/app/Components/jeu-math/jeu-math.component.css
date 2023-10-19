@@ -1,0 +1,82 @@
+.header{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: auto;
+    background-color: #16161D;
+}
+.header-content{
+    display: flex;
+    align-items:center ;
+}
+.header h2{
+    color:#1C4889;
+    font-size:xx-large;
+}
+.header i{
+    cursor: pointer;
+}
+.header button{
+    padding-bottom: 7px;
+    border-radius: 15px;
+    border-color:#1C4889;
+    background-color:#1C4889;
+    font-size:x-large;
+    cursor: pointer;
+
+}
+.container-flex{
+    background-color: #464C7D;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+.container-game{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 50px;
+}
+input{
+    background-color: transparent;
+    font-size: xx-large;
+    font-weight: 600;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    border:none;
+    outline: none;
+}
+.operandes{
+    display: flex;
+    justify-content: center;
+}
+.somme{
+    width: 100%;
+    text-align: center;
+    font-size: xx-large;
+    color:black;
+    font-weight: 900;
+}
+.draggable-input{
+    cursor: pointer;
+}
+
+.highlighted{
+    background-color: #464165;
+    border-radius:5px;
+}
+.hidden{
+    display: none;
+}
+
+@media screen and (max-width: 480px) {
+    input{
+        font-size:large;
+        width: 30px;
+        height: 30px;
+    }
+}

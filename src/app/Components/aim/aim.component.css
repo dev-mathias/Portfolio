@@ -1,0 +1,23 @@
+
+
+.jeu-container {
+    position: relative;
+  }  
+.cible {
+    position: absolute;
+    border-radius: 50%;
+    
+}
+.chrono{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top:0;
+    left:0;
+    display: grid;
+    place-items: center; 
+    font-size: 25vh;
+    color:darkgray;
+    opacity: 0.5;
+    z-index: -1000;
+}

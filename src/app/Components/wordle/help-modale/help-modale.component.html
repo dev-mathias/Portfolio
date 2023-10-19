@@ -1,0 +1,19 @@
+<div  class="modal">
+    <div class="modal-content">
+        <span (click)="closeHelpModal()" class="close">&times;</span>
+        <p>
+            Un mot de 5 lettres est sélectionné au hasard. Votre objectif est de le deviner en 5 essais maximum. Lors de chaque tentative, les lettres du mot que vous proposez seront colorées selon leur présence et leur position dans le mot mystère.
+            <br>
+            Exemple:
+            <br>
+            <input type="text" value="P" class="bon"><input type="text" value="I" class="mauvais"><input type="text" value="S" class="mauvais"><input type="text" value="T" class="mauvais"><input type="text" value="E" class="bon">
+            P-E sont à la bonne place. I-S-T ne sont pas dans le mot.
+            <br>
+            <input type="text" value="P" class="bon"><input type="text" value="A" class="mibon"><input type="text" value="R" class="mauvais"><input type="text" value="U" class="mauvais"><input type="text" value="E" class="bon">
+            A est dans le mot mais pas à la bonne place.
+            <br>
+            <input type="text" value="P" class="bon"><input type="text" value="L" class="bon"><input type="text" value="A" class="bon"><input type="text" value="G" class="bon"><input type="text" value="E" class="bon">
+            Vous avez réussi!
+        </p>
+    </div>    
+</div>

@@ -1,0 +1,11 @@
+<!-- <app-nav></app-nav> -->
+<ng-container  *ngIf="isTerminalComponent(); else Accueil">
+  <app-shell></app-shell>
+</ng-container>
+
+  <ng-template #Accueil>
+    <router-outlet></router-outlet>
+  </ng-template>
+
+
+

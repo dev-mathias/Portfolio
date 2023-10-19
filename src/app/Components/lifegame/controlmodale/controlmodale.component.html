@@ -1,0 +1,30 @@
+<div class="modal">
+    <div class="modal-content">
+        <span  class="close" (click)="closeMenu()">&times;</span>
+        <div class="control-container">
+            <img src="/assets/img/play.png" (click)="Play()">
+            <img src="/assets/img/pause.png" (click)="Pause()" >
+            <img src="/assets/img/update.png"(click)="Update()">
+            <img src="/assets/img/information.png">
+            <!-- <label  for="select">Config</label> -->
+              <select name="configs" id="select">
+                <option value="">--Configs--</option>
+                <option value="gridConfig1">gridConfig1</option>
+                <option value="gridConfig2">gridConfig2</option>
+                <option value="gridConfig3">gridConfig3</option>
+                <option value="gridConfig4">gridConfig4</option>
+                <option value="planeur">planeur</option>
+                <option value="clignotant">clignotant</option>
+                <option value="bloc">bloc</option>
+                <option value="vaisseauLeger">vaisseau Léger</option>
+                <option value="vaisseauMoyen">vaisseau Moyen</option>
+                <option value="puffeur">puffeur</option>
+                <option value="canonPlaneurs">canon à planeurs</option>
+                <option value="canonVaisseauxLeger">canon à vaisseaux léger</option>
+                <option value="canonVaisseauxMoyen">canon à vaisseaux moyens</option>
+                <option value="piecePersane">pièce persane</option>
+                <option value="gliderGun">gliderGun</option>
+              </select>
+        </div>
+    </div>
+</div>

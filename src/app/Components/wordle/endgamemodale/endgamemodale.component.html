@@ -1,0 +1,6 @@
+<div  class="modal">
+    <div class="modal-content">
+        <p>Vous avez {{ wordFound ? 'trouvé' : 'épuisé toutes vos tentatives' }}. <br> Le mot était <span>{{word}}</span>.</p>
+        <button (click)="restartGame()">Recommencer</button>
+    </div>
+</div>

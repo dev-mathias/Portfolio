@@ -1,0 +1,36 @@
+
+<div class="wrapper">
+    <div class="one"></div>
+    <div class="two"></div>
+    <div class="three"></div>
+    <div class="four"></div>
+    <div class="five">
+        <div class="container-titre-input">
+            <h1 class="title is-2">Todo App</h1>
+            <div class="container2">
+                
+                    <input type="text" placeholder="Add your new todo" [(ngModel)]="name" name="title"/> 
+                    <div> <img id="ajout" src="assets/img/ajouter.png" height="35px " width="35px" (click)="Create()"></div>
+                
+            </div>
+        </div>
+        <div class="container-table">
+            <table>
+                <tr *ngFor="let element of todos"  (mouseenter)="showButtons(element.id)" (mouseleave)="HideButtons(element.id)">
+                    <!-- <td>{{element.id}}</td> -->
+                    <td>{{element.title}}</td>
+                    <td >
+                        <div class="button-container" id="{{element.id}}">
+                            <img class="icone" src="assets/img/verifier.png" alt=""  (click)="ChangeState(element.id)">
+                            <img class="icone" src="assets/img/trash.png" alt=""  (click)="Delete(element.id)">
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="six"></div>
+    <div class="sept"></div>
+    <div class="huit"></div>
+    <div class="neuf"></div>
+  </div>

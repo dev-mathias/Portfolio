@@ -1,0 +1,22 @@
+<div class="modal-conteneur">
+    <div class="modal-content">
+        <div *ngIf="!showRecap" class="bouton">
+            Just click on the red circle to test your aim !
+        </div>
+        <div *ngIf="showRecap" class="bouton">
+            <p>
+                <strong>Score:</strong> {{count}}<br> 
+                <strong>Average: </strong> {{count/oldTimer | number:'1.2-2'}} target(s)/second 
+            </p>
+        </div>
+        <br>
+        <form>
+            <label>Timer: {{timer}} seconds</label> 
+            <input type="range" name="inputforlevel" min="10" max="60" step="10" value="10" [(ngModel)]="timer" (input)="onInputChange($event)">
+            <br>
+        </form>
+        <div class="bouton">
+            <button (click)="start()">Play</button>  
+        </div>
+    </div>
+</div>

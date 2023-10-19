@@ -1,0 +1,80 @@
+        <section class="backgrounded1">
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+                    <div class="columns is-desktop is-mobile is-vcentered is-centered">
+                      <div class="column is-6-desktop is-8-mobile">
+                      
+                        <div class="container has-text-centered is-vcentered">
+                          <h2 class="subtitle titlecolored">Hello,</h2>
+                          <h1 class="title is-1 titlecolored ">I am Mathias</h1>
+                                    <h2 class="subtitle is-2 titlecolored">A self-taught junior developer!</h2>
+                                  </div>
+                      </div>
+                      <div class="column is-6-desktop is-4-mobile has-text-centered">
+                          <img src="assets/img/dev.svg" alt="img accueil">
+                      </div>
+                  </div>
+        </section>
+<section class="backgrounded2" id="interet">
+  <div class="flex-container">
+    <div>
+      <h2 class="title is-2">Here are the programming languages/frameworks I am familiar with</h2>
+    </div>
+    <div class="carousel-container">
+      <div class="carousel">
+        <img src="./assets/img/carousel/html.png" alt="html">
+        <img src="./assets/img/carousel/css.png" alt="css">
+        <img src="./assets/img/carousel/javascript.svg" alt="javascript">
+        <img src="./assets/img/carousel/typescript.png" alt="c#">
+        <img src="./assets/img/carousel/csharp.png" alt="c#">
+        <img src="./assets/img/carousel/angular.png" alt="c#">
+        <img src="./assets/img/carousel/net.svg" alt="c#">
+      </div>
+    </div>
+  </div>
+</section> 
+<section class="backgrounded3">
+  <h2 class="subtitle is-2 titlecolored has-text-centered">About me</h2>
+  <div class="columns is-centered">
+    <p class="column is-6 has-text-justified ">
+      I started a Bachelor's degree in Management Information Systems to dive into the IT world, but had to leave due to the Covid crisis. Later, in April 2022, I took a .NET (C#) development course with Forem and Technofutur. This experience deepened my passion for development.  As a self-taught individual with a natural curiosity,I love learning and often teach myself new technologies.
+    </p>
+</div>
+</section>
+<section class="backgrounded4">
+  <h2 class="subtitle is-2 has-text-centered">Projects</h2>
+  <div class="outer-grid">  
+    <div class="container-grid">
+      <div *ngFor="let element of getObjectKeys(projectsDescription)" >
+        <div class="grid-item-title">
+          {{element}}
+        </div>
+        <div  class="grid-item-description hide-on-small-screen">
+          {{projectsDescription[element]}}
+        </div>
+        <div class="grid-item-button"><button routerLink="{{projectsLink[element]}}">View project</button></div>
+      </div>
+      <div>
+        <div class="grid-item-title">
+          Github
+        </div>
+        <div  class="grid-item-description hide-on-small-screen">
+          Check out my GitHub repository. It contains most of the projects I completed/started during my training
+        </div>
+        <div class="grid-item-button">
+          <button (click)="goToExternalSite()">View projects</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  
+</section>
+    
+    
+    
+
+

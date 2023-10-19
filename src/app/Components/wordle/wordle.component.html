@@ -1,0 +1,33 @@
+<div class="header">
+    <div></div>
+    <div class="header-content">
+        <h2>Trouve le mot</h2>
+       &nbsp;&nbsp;&nbsp;
+        <button (click)="openHelpModal()">Règles</button>
+    </div>
+    <div></div>
+</div>
+<div class="flex-container">
+    <div class="flex-item">
+        <div *ngFor="let userGuess of userGuesses; let attemptIndex = index" class="word-inputs">
+            <input #inputRef type="text" maxlength="1" autocomplete="off"
+                   *ngFor="let char of userGuess; let charIndex = index ;trackBy: trackByFn"
+                   (keyup)="testKeyUp(charIndex, attemptIndex,$event)"
+                   id="input_{{attemptIndex}}_{{charIndex}}"
+                   [(ngModel)]="userGuesses[attemptIndex][charIndex]">
+        </div>
+        <br>
+    </div>
+    <div class="grid-item"></div>
+</div>
+<div class="flex-container2">
+    <div class="grid-container3 grid-item2"> 
+        <span class="grid-item2" id="{{item}}" *ngFor="let item of letters">
+            {{item | uppercase}}
+        </span>
+    </div>
+</div>
+
+<app-endgamemodale *ngIf="showEndGameModal" [wordFound]="wordFound" [showEndGameModal]="showEndGameModal" [word]="word"  (restartClicked)="restartGame()"> </app-endgamemodale>
+<app-unfound-word *ngIf="unknownWord" [unknownWord]="unknownWord" (continueClicked)="Continue()"></app-unfound-word>
+<app-help-modale *ngIf="showHelpModal"  (closeClicked)="closeHelpModal()"></app-help-modale>

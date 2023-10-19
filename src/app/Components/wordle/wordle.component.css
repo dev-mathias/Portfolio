@@ -1,0 +1,100 @@
+:host{
+    height: 100%;
+    display: block;
+    background-color: #6E6E6E;;
+}
+.header{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: auto;
+    background-color: #383838
+}
+.header-content{
+    display: flex;
+    align-items:center ;
+    justify-content: space-between;
+}
+.header h2{
+    color:#BAFF39;
+    font-size:xx-large;
+}
+.header button{
+    border-radius: 15px;
+    border-color:#BAFF39;
+    background-color:#BAFF39;
+    font-size:x-large;
+
+}
+.flex-container {
+   
+    display: flex;
+    justify-content: center; /* Centrage horizontal */
+    align-items: center;     /* Centrage vertical */
+}
+.flex-container2{
+    display: flex;
+    justify-content: center; /* Centrage horizontal */
+    align-items: center;     /* Centrage vertical */
+}
+.grid-container3{
+    display: grid;
+    grid-template-columns: repeat(13,1fr);
+
+}
+
+.word-inputs {
+    display: flex;
+}
+
+.word-inputs input {
+    background-color: #0E0E0F;
+    font-size: xx-large;
+    color: white;
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    margin: 5px;
+    text-align: center;
+    font-size: 24px;
+    border: 1px solid grey;
+    border-radius: 5px;
+    outline: none;
+    transition: background-color 0.5s, color 0.5s;
+    text-transform: uppercase;
+}
+
+span{
+    background-color: #ffffff;
+    border:1px solid black;
+    
+    display: flex;
+    justify-content: center; /* Centrage horizontal */
+    align-items: center;     /* Centrage vertical */
+    padding: 5px;
+}
+
+.modal {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+
+/* Style du contenu de la modale */
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Style du bouton de fermeture */

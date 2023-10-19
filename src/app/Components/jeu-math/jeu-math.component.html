@@ -1,0 +1,38 @@
+<div class="header">
+    <div></div>
+    <div class="header-content">
+        <h2>Make it ten !</h2>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button (click)="openHelpModal()">Rules</button>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <i class="fa-solid fa-rotate-right fa-2xl " (click)="newGame()"></i>
+    </div>
+    <div></div>
+</div>
+<div class="container-flex">
+    <div class="container-game">
+        <h1 class="somme" *ngIf="fullExpression; else interrogation "> {{somme}}</h1>
+        <ng-template #interrogation>
+            <h1 class="somme">??</h1>
+        </ng-template>
+        <div class="inputs">
+                <form [formGroup]="form">
+                    <input type="text"  class="draggable-input"  autocomplete="off"  draggable="true" id="one" formControlName="one" #draggable #inputs readonly>
+                    <input type="text"  class="draggable-input"  autocomplete="off" draggable="true" id="two" formControlName="two" #draggable #inputs readonly>
+                    <input type="text"  class="draggable-input"  autocomplete="off"  draggable="true" id="three" formControlName="three" #draggable #inputs readonly>
+                    <input type="text"  class="draggable-input"  autocomplete="off" draggable="true" id="four" formControlName="four"#draggable #inputs  readonly> 
+                    <input type="text"  class="draggable-input"  autocomplete="off"  draggable="true" id="five" formControlName="five" #draggable #inputs readonly>
+                    <input type="text"  class="draggable-input"  autocomplete="off" draggable="true"  id="six" formControlName="six"  #draggable #inputs readonly>
+                    <input type="text"  class="draggable-input"  autocomplete="off" draggable="true" id="seven" formControlName="seven" #draggable #inputs readonly>
+                </form>
+        </div>
+            <form [formGroup]="form"  class="operandes">
+                <input type="text"  class="draggable-input" draggable="true" formControlName="moins" #draggable readonly>
+                <input type="text"  class="draggable-input" draggable="true" formControlName="plus" #draggable readonly>
+                <input type="text"  class="draggable-input" draggable="true" formControlName="mult" #draggable readonly>
+                <input type="text"  class="draggable-input" draggable="true" formControlName="div" #draggable readonly>
+            </form>    
+    </div>
+</div>
+<app-end-game *ngIf="showEndGameModal" (closeClicked)="closeEndModal()"></app-end-game>
+<app-help *ngIf="showHelpModal" [showHelpModal]="showHelpModal" (closeClicked)="closeHelpModal()"></app-help>

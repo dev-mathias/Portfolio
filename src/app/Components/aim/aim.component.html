@@ -1,0 +1,18 @@
+<div class="jeu-container" (click)="checkTargetHit($event)" [style.height.px]="heightViewport" [style.width.px]="widthViewport">
+    <div *ngFor="let cible of cibles" class="cible" id="{{cible.y}}/{{cible.x}}"
+        [style.left.px]="cible.x*20" 
+        [style.top.px]="cible.y*20" 
+        [style.width.px]="widthCible"
+        [style.height.px]="heightCible">
+    </div>
+</div>
+<div class="chrono">{{timer}}</div>
+<app-start-modal *ngIf="showStartModal || endGame"
+    [showRecap]="endGame"
+    [count]="count"
+    [timer]="timerRef"
+    [oldTimer]="oldTimer"
+    (timerChanged)="onTimerChange($event)"
+    (playClicked)="start()">
+    
+</app-start-modal>
