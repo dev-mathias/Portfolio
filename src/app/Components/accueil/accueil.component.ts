@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
+import gsap from 'gsap';
+
+import ScrollTrigger from 'gsap/ScrollTrigger';
 import { Dictionnary } from 'src/app/Models/dictionnary';
 
 @Component({
@@ -6,7 +9,7 @@ import { Dictionnary } from 'src/app/Models/dictionnary';
   templateUrl: './accueil.component.html',
   styleUrls: ['./accueil.component.css']
 })
-export class AccueilComponent implements OnInit {
+export class AccueilComponent implements OnInit, AfterViewInit {
   currentIndex:number = 0;
   carousel!: HTMLElement | null;
   timer!: ReturnType<typeof setInterval>;
@@ -14,8 +17,11 @@ export class AccueilComponent implements OnInit {
   projectsDescription:Dictionnary={};
   projectsLink:Dictionnary={};
   constructor() { }
-
+ 
+ 
+  
   ngOnInit(): void {
+    gsap.registerPlugin(ScrollTrigger);
     this.projectsDescription={
       "Todo App":"A little todo App ",
       "Wordle":" It's a little game. Players try to guess a five-letter word within five attempts. After each guess, the game provides feedback by color-coding the letters.",
@@ -37,13 +43,39 @@ export class AccueilComponent implements OnInit {
       this.startCarousel();
     }
   }
+  ngAfterViewInit(): void {
+    const first=document.querySelector('.first');
+    const second=document.querySelector('.second');
+    const third=document.querySelector('.third');
+    const TL=gsap.timeline();
+    TL
+    .from(first,{opacity:0,duration:1},1)
+    .from(second,{opacity:0,duration:1.5},2)
+    .from(third,{opacity:0,duration:1.5},3);
+
+    const four=document.querySelector('.four');
+    const five=document.querySelector('.five');
+
+    gsap.to(five,{
+      duration:1.5,
+      opacity:1,
+      scale:1.25,
+      scrollTrigger:{
+        trigger:".five",
+        markers:true,
+        start:"-60% center",
+        toggleActions:"play none none reverse",
+      }
+
+    })
+
+  }
   
   showImage(index: number): void {
     this.carousel!.style.transform = `translateX(-${index * 100}%)`;
   }
   
   nextImage(): void {
-    
     this.currentIndex++;
     if (this.currentIndex >= this.images.length) {
       this.currentIndex = 0;

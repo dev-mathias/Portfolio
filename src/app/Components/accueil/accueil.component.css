@@ -25,7 +25,9 @@ img {
 .flex-container{
   display: flex;
   justify-content: space-around;
+  flex-direction: column;
   width: 100%; 
+  align-items: center;
 }
 .flex-container div:first-child{
   width: 30%;
@@ -39,6 +41,7 @@ img {
   
 .carousel {
     display: flex;
+
     transition: transform 0.3s ease-in-out;
   }
   
@@ -64,6 +67,9 @@ img {
   }
 .backgrounded3 p {
   font-size: large;
+}
+.five{
+  opacity: 0;
 }
 .chat-icon{
   position: fixed;
